@@ -8,7 +8,7 @@ package cn.qingtangbaimian.algorthm.array;
 public class SearchInsert {
 
     public static void main(String[] args) {
-        System.out.println(searchInsert(new int[]{1, 3}, 0));
+        System.out.println(searchInsert(new int[]{1, 3,4}, 7));
     }
 
     public static int searchInsert(int[] nums, int target) {
@@ -25,25 +25,17 @@ public class SearchInsert {
             if (nums[middle] == target) {
                 return middle;
             }
-            if (target > nums[middle - 1] && target < nums[middle]) {
-                return middle;
-            }
-            if (target > nums[middle] && target < nums[middle + 1]) {
-                return middle + 1;
-            }
+
             if (nums[middle] > target) {
                 high = middle - 1;
-                if (high == 0) {
-                    return 0;
-                }
             }
             if (nums[middle] < target) {
                 low = middle + 1;
-                if (low == high) {
-                    return high + 1;
-                }
             }
         }
-        return -1;
+        if (low > high) {
+            return low;
+        }
+        return high < 0 ? 0 : low >= nums.length ? nums.length : -1;
     }
 }
