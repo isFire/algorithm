@@ -2,7 +2,7 @@ package cn.qingtangbaimian.algorthm.array;
 
 /**
  * @author <a href="mailto:is_fire_subscribe@hotmail.com">清汤白面</a>
- * @description
+ * @description <a href="/"></a>
  * @date 2023-05-10 23:02:15
  */
 public class PlusOne {

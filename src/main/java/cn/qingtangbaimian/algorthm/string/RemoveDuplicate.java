@@ -2,7 +2,7 @@ package cn.qingtangbaimian.algorthm.string;
 
 /**
  * @author <a href="mailto:is_fire_subscribe@hotmail.com">李昭</a>
- * @description
+ * @description <a href="/"></a>
  * @date 2023-05-05 10:47:07
  */
 public class RemoveDuplicate {

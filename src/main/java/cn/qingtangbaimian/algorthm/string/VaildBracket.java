@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @author <a href="mailto:is_fire_subscribe@hotmail.com">清汤白面</a>
- * @description
+ * @description <a href="https://leetcode.cn/problems/two-sum/">第1题 两数之和</a>
  * @date 2023-05-07 23:21:55
  */
 public class VaildBracket {

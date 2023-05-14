@@ -7,7 +7,7 @@ import java.util.Objects;
 
 /**
  * @author <a href="mailto:is_fire_subscribe@hotmail.com">清汤白面</a>
- * @description
+ * @description <a href="/"></a>
  * @date 2023-05-04 11:22:07
  */
 public class TwoSum {
