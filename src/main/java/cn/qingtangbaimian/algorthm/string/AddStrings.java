@@ -12,7 +12,28 @@ public class AddStrings {
     }
 
     /**
-     * 这道题前后做了三次
+     * 这道题前后做了三次，第一次使用if判断
+     * 执行耗时:3 ms,击败了17.33% 的Java用户
+     * 内存消耗:42.8 MB,击败了5.03% 的Java用户
+     * ```Java
+     * if (n1Index >= 0) {
+     *    num += num1.charAt(n1Index--) - '0';
+     * }
+     * if (n2Index >= 0) {
+     *     num += num2.charAt(n2Index--) - '0';
+     * }
+     * ```
+     * 第二次，将if改为了三目运算符
+     * 执行耗时:2 ms,击败了38.42% 的Java用户
+     * 内存消耗:42.7 MB,击败了5.03% 的Java用户
+     * ```
+     * num += n1Index > -1 ? num1.charAt(n1Index--) - '0' : 0;
+     * num += n2Index > -1 ? num2.charAt(n2Index--) - '0' : 0;
+     * ```
+     * 第三次，参考了其他大佬的方式，将builder.insert(0， num%10)改成了builder.append(num%10)
+     * 在最后通过reverse()进行反转，结果效果确实比insert(0) 要好得多
+     * 执行耗时:1 ms,击败了100.00% 的Java用户
+     * 内存消耗:40.6 MB,击败了95.63% 的Java用户
      * @param num1
      * @param num2
      * @return
