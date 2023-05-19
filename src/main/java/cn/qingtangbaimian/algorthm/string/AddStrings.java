@@ -47,8 +47,8 @@ public class AddStrings {
             num = num > 9 ? 1 : 0;
             num += n1Index > -1 ? num1.charAt(n1Index--) - '0' : 0;
             num += n2Index > -1 ? num2.charAt(n2Index--) - '0' : 0;
-            builder.insert(0, num % 10);
+            builder.append(num % 10);
         }
-        return num > 9 ? builder.insert(0, 1).toString() : builder.toString();
+        return num > 9 ? builder.append(1).reverse().toString() : builder.reverse().toString();
     }
 }
