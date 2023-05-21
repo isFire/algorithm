@@ -1,12 +1,10 @@
 package cn.qingtangbaimian.algorthm.tree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author <a href="mailto:is_fire_subscribe@hotmail.com">清汤白面</a>
- * @description <a href="/">第144题二叉树的前序遍历</a>
+ * @description <a href="https://leetcode.cn/problems/binary-tree-preorder-traversal/">第144题二叉树的前序遍历</a>
  * @date 2023-05-19 23:38:33
  */
 public class PreorderTraversal {
@@ -16,7 +14,27 @@ public class PreorderTraversal {
         root.left = null;
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
-        System.out.println(preorderTraversal(root));
+        System.out.println(dfs(root));
+    }
+
+    public static List<Integer> dfs(TreeNode root) {
+        List<Integer> result = new ArrayList<>(3);
+        if (Objects.isNull(root)) {
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            result.add(node.val);
+            if (Objects.nonNull(node.right)) {
+                stack.push(node.right);
+            }
+            if (Objects.nonNull(node.left)) {
+                stack.push(node.left);
+            }
+        }
+        return result;
     }
 
     /**

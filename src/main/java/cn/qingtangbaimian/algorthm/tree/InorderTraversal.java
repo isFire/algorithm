@@ -1,9 +1,6 @@
 package cn.qingtangbaimian.algorthm.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @author <a href="mailto:is_fire_subscribe@hotmail.com">清汤白面</a>
@@ -18,14 +15,28 @@ public class InorderTraversal {
         root.left = null;
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
-        System.out.println(inorderTraversal(root));
+        System.out.println(dfs(root));
     }
 
-    /**
-     * 还得是递归大法好啊，用栈搞了半天还是放弃了
-     * @param root 根节点
-     * @return 中序遍历后的结果
-     */
+    public static List<Integer> dfs(TreeNode root) {
+        List<Integer> result = new ArrayList<>(10);
+        if (null == root) {
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (stack.size() > 0 || null != cur) {
+            if (null == cur) {
+                TreeNode pop = stack.pop();
+                result.add(pop.val);
+                cur = pop.right;
+            }
+            stack.push(cur);
+            cur = cur.left;
+        }
+        return result;
+    }
+
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>(10);
         if (null == root) {
